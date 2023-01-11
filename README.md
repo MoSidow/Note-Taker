@@ -2,7 +2,7 @@
 
 ## Description
 
-In this assignment i have created a note taking app deployed to heroku, it allows users to add, delete or view a note
+In this assignment i have created a note taking app deployed to heroku, it allows users to add, delete or view a note.
 
 
 ## User Story
