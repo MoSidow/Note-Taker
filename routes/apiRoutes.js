@@ -14,7 +14,7 @@ noteRouter.get('/notes', (req, res) => {
 noteRouter.post('/notes', (req, res) => {
     file
     .addNote(req.body)
-    
+
 .then((note) => res.json(note))
 .catch((err) => res.status(500).json(err)) 
 });

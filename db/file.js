@@ -12,11 +12,11 @@ const readFileAsync = util.promisify(fs.readFile);
 
 class file {
     read() {
-        return readFileAsync('db/db.json', 'utf8');
+        return readFileAsync('./db/db.json', 'utf8');
     }
 
     write() {
-        return writeFileAsync('db/db.json', JSON.stringify(note));
+        return writeFileAsync('./db/db.json', JSON.stringify(notes));
     }
 
     getNotes() {
@@ -38,6 +38,7 @@ class file {
         }
 
       const newNote = {title, text, id: uuid()};
+      console.log(newNote, "newNote")
       return this.getNotes()
       .then((notes) => [...notes, newNote])
       .then((updatedNotes) => this.write(updatedNotes))
