@@ -4,7 +4,7 @@ const noteRouter = require('express').Router();
 
 noteRouter.get('/notes', (req, res) => {
     file
-    .getNotes()
+    .getTheNotes()
     .then((notes) => {
         return res.json(notes);
     })
@@ -26,4 +26,6 @@ noteRouter.delete('/notes/:id', (req, res) => {
 .then(() => res.json({ ok: true}))
 .catch((err) => res.status(500).json(err)) 
 });
+
+module.exports = noteRouter
 
