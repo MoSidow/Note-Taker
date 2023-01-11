@@ -2,6 +2,7 @@ const file = require('../db/file');
 
 const noteRouter = require('express').Router();
 
+// GET request to get the notes
 noteRouter.get('/notes', (req, res) => {
     file
     .getNotes()
@@ -11,6 +12,7 @@ noteRouter.get('/notes', (req, res) => {
    .catch((err) => res.status(500).json(err))
 });
 
+//Post request to add a note
 noteRouter.post('/notes', (req, res) => {
     file
     .addNote(req.body)
@@ -19,6 +21,7 @@ noteRouter.post('/notes', (req, res) => {
 .catch((err) => res.status(500).json(err)) 
 });
 
+// delete request to delete a note
 noteRouter.delete('/notes/:id', (req, res) => {
     file
     .removeNote(req.params.id)
